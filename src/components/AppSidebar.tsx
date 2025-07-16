@@ -47,7 +47,7 @@ const items = [
 
  function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" >
+    <Sidebar collapsible="icon" variant="floating" >
         <SidebarHeader>
             <SidebarMenu>
                 <SidebarMenuItem>
@@ -80,24 +80,34 @@ const items = [
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter>
-        <SidebarMenu>
-            <SidebarMenuItem>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <SidebarMenuButton>
-                            <User2 />
-                            Cat larry
-                            <ChevronUp className="ml-auto" />
-                        </SidebarMenuButton>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="px-20">
-                       {['Account','Setting','Sign out'].map((item,index)=><DropdownMenuItem key={index}>{item}</DropdownMenuItem>)}
-                    </DropdownMenuContent>
-                </DropdownMenu>
+       <SidebarFooter>
+          <SidebarMenu>
+            <SidebarMenuItem >
+              <DropdownMenu  >
+                <DropdownMenuTrigger asChild>
+                  <SidebarMenuButton>
+                    <User2 /> Username
+                    <ChevronUp className="ml-auto" />
+                  </SidebarMenuButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  side="top"
+                  className="w-[--radix-popper-anchor-width]"
+                >
+                  <DropdownMenuItem>
+                    <span>Account</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <span>Billing</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <span>Sign out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
+          </SidebarMenu>
+        </SidebarFooter>
     </Sidebar>
   )
 }
